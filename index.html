@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Smart Returns Calculator</title>
+
+  <!-- styles + font -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="script.js">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- ───────── HERO ───────── -->
+  <header class="hero">
+    <div class="brand">💰 InvestoWise</div>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>The Smart<br><span>Returns</span> Calculator</h1>
+        <p>Plan your future across Mutual Funds, ETFs & Gold in seconds.</p>
+
+        <div class="cta">
+          <a href="#calc" class="btn primary">Try It Now</a>
+          <a href="#learn" class="btn ghost">Learn More</a>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=720&q=80"
+             alt="Investment illustration">
+      </div>
+    </div>
+  </header>
+
+  <!-- ───────── MAIN CALCULATOR ───────── -->
+  <main id="calc" class="wrapper">
+    <!-- ❶ key‑card sidebar -->
+    <aside class="sidebar">
+      <button class="card active"  data-type="mutual">Mutual Fund<br>Calculator</button>
+      <button class="card"        data-type="etf">ETF Calculator</button>
+      <button class="card"        data-type="gold">Gold Calculator</button>
+    </aside>
+
+    <!-- ❷ calculator box -->
+    <section class="calc-box">
+      <div class="calc-head">
+        <h2 id="calc-title">Mutual Fund Calculator</h2>
+        <!-- currency selector -->
+        <select id="currency-select" class="currency-select">
+          <option value="INR" selected>₹ INR</option>
+          <option value="USD">$ USD</option>
+          <option value="EUR">€ EUR</option>
+        </select>
+      </div>
+
+      <form id="calc-form">
+        <div class="field">
+          <label>How much will you be saving each month?</label>
+          <div class="prefix">
+            <span id="currency-symbol">₹</span>
+            <input type="number" id="amount" placeholder="25000" min="1" required>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="field">
+            <label>Time (years)</label>
+            <input type="number" id="years" placeholder="10" min="1" required>
+          </div>
+
+          <div class="field">
+            <label>Expected Rate of Return % (p.a.)</label>
+            <div class="suffix">
+              <input type="number" id="roi" placeholder="12" step="0.01" min="0" required>
+              <span>%</span>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn gradient">Calculate</button>
+      </form>
+
+      <div id="result" class="result hidden">
+        <p><strong>Invested Amount:</strong> <span class="cur">₹</span><span id="invested">0</span></p>
+        <p><strong>Profit:</strong> <span class="cur">₹</span><span id="profit">0</span></p>
+        <p><strong>Total Amount:</strong> <span class="cur">₹</span><span id="total">0</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
